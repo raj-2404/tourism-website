@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./profile.css">
+</head>
+
+<body>
+    <div class="profile-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-btn" onclick="goBack()">&#8592;</button>
+            <div class="profile-pic">
+                <!-- image for the profile  -->
+            </div>
+            <button class="edit-btn" onclick="editProfile()">+</button>
+            <h2 id="username">John Doe</h2>
+            <p id="user-bio">Travel Enthusiast</p>
+
+            <nav class="nav-links">
+                <a href="#">Current Plan</a>
+                <a href="#">Previous Trips</a>
+                <a href="#">Wishlist</a>
+                <a href="#">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="current-plan">
+                <h3>Current Travel Plan</h3>
+                <p><strong>Destination:</strong> Bali, Indonesia</p>
+                <p><strong>Dates:</strong> March 10 - March 20, 2025</p>
+                <p><strong>Itinerary:</strong> Beach exploration, temple visits, scuba diving.</p>
+            </section>
+
+            <section class="previous-trips">
+                <h3>Previous Trips</h3>
+                <div class="trip-gallery">
+                    <div class="trip"><img src="paris.jpg" alt="Paris">
+                        <p>Paris, France</p>
+                    </div>
+                    <div class="trip"><img src="newyork.jpg" alt="New York">
+                        <p>New York, USA</p>
+                    </div>
+                    <div class="trip"><img src="tokyo.jpg" alt="Tokyo">
+                        <p>Tokyo, Japan</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wishlist">
+                <h3>Wishlist & Saved Places</h3>
+                <ul>
+                    <li>🏝 Maldives</li>
+                    <li>🏔 Swiss Alps</li>
+                    <li>🏜 Grand Canyon</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="./profile.js"></script>
+</body>
+
+</html>
