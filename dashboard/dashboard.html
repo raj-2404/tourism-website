@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Explora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Explora Admin</h2>
+        <ul>
+            <li><a href="#"><i class="fa fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="/admin/add-location"><i class="fa fa-plus"></i> Add Location</a></li>
+            <li><a href="/admin/manage-locations"><i class="fa fa-map"></i> Manage Locations</a></li>
+            <li><a href="/admin/manage-users"><i class="fa fa-users"></i> Manage Users</a></li>
+            <li><a href="/logout"><i class="fa fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h2>Dashboard</h2>
+        </header>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Total Locations</h3>
+                <p>25</p>
+            </div>
+            <div class="card">
+                <h3>Total Users</h3>
+                <p>150</p>
+            </div>
+            <div class="card">
+                <h3>Total Bookings</h3>
+                <p>78</p>
+            </div>
+            <div class="card">
+                <h3>Revenue</h3>
+                <p>$12,500</p>
+            </div>
+        </div>
+        
+        <!-- Charts Section -->
+        <div class="chart-container">
+            <canvas id="userChart"></canvas>
+            <canvas id="bookingChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // User Growth Chart
+        const ctx1 = document.getElementById('userChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'User Growth',
+                    data: [10, 20, 45, 60, 80, 150],
+                    borderColor: 'blue',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            }
+        });
+
+        // Booking Chart
+        const ctx2 = document.getElementById('bookingChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Bookings',
+                    data: [5, 15, 25, 35, 50, 78],
+                    backgroundColor: 'green'
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
